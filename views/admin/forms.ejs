@@ -1,0 +1,125 @@
+<%- include('../include/head.ejs')%>
+    </head>
+<body style="overflow: hidden;">
+    <%- include('../include/header.ejs')%>            
+    <%- include('../include/sideBar.ejs')%>
+<div id="page-content-wrapper">
+    <div id="page-title">
+        <h3>
+            Add Doctors
+            <small>
+                You can add new doctors.
+            </small>
+        </h3>                       
+    </div>
+    <div id="page-content">
+        
+        <div class="example-box">
+            <div class="example-code clearfix">
+        
+                <form action="/addDoctor" enctype="multipart/form-data" class="col-md-12" method="POST">
+                    
+                    <div class="form-col">
+                        <div class="form-label col-md-2">
+                            <label for="">
+                                Name :
+                            </label>
+                        </div>
+                        <div class="form-input col-md-4">
+                            <input placeholder="Enter Name" type="text" name="name" id="">
+                        </div>
+                    </div>  
+                    <div class="form-row">
+                        <div class="form-label col-md-2">
+                            <label for="">
+                               Last Name :
+                            </label>
+                        </div>
+                        <div class="form-input col-md-4">
+                            <input placeholder="Enter Name" type="text" name="lname" id="">
+                        </div>
+                    </div>       
+                    <div class="form-col">
+                        <div class="form-label col-md-2">
+                            <label for="">
+                                Email Address :
+                            </label>
+                        </div>
+                        <div class="form-input col-md-4">
+                            <input placeholder="Enter Email Address" type="text" name="email" id="">
+                        </div>
+                    </div> 
+                    <div class="form-row">
+                        <div class="form-label col-md-2">
+                            <label for="">
+                                Phone Number :
+                            </label>
+                        </div>
+                        <div class="form-input col-md-4">
+                            <input placeholder="Enter Phone Number" type="text" name="phone" id="">
+                        </div>
+                    </div> 
+                    <div class="form-col">
+                        <div class="form-label col-md-2">
+                            <label for="">
+                                Choice Department :
+                            </label>
+                        </div>
+                        <div class="form-input col-md-4">
+                            <select name="dp" id="dp">
+                            <% if(dp.length>0){
+                                for(d of dp){
+                                    %>
+                                    <option value="<%= d._id%>"><%= d.dp%></option>
+                                    <%
+                                }
+                            }%>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-label col-md-2">
+                            <label for="">
+                                Status :
+                            </label>
+                        </div>
+                        <div class="form-input col-md-4">
+                            <input placeholder="Enter Status" type="text" name="status" id="">
+                        </div>
+                    </div> 
+                    
+                    <div class="form-row">
+                        <div class="form-label col-md-3">
+                            <label for="">
+                                Description :
+                            </label>
+                        </div>
+                        <div class="form-input col-md-8">
+                            <textarea name="des" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div> 
+                    <br>
+                    <div class="form-label col-md-3 center-margin">
+                        <span class="btn medium bg-green fileinput-button ">
+                            <span class="button-content">
+                                
+                            <i class="glyph-icon icon-plus"></i>
+                            Upload Doctor Photo...
+                            </span>
+                            <input type="file" name="image" multiple="">
+                        </span>
+                    </div>
+                    <br>
+                    <div class="form-label col-md-3 center-margin">
+                        <button type="submit" class="btn medium bg-green ">
+                            <span class="button-content">Save</span>
+                        </button>
+                        <a href="/doctors"> Back</a>
+                    </div>
+                </form>
+        
+            </div>
+            
+        </div>
+<%- include('../include/end.ejs')%>

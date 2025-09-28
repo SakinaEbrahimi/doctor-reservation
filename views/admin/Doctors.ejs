@@ -1,0 +1,96 @@
+<%- include('../include/head.ejs')%>
+</head>
+<body style="overflow: hidden;">
+    <%- include('../include/header.ejs')%>            
+    <%- include('../include/sideBar.ejs')%>
+    <div id="page-content-wrapper">
+        <div id="page-title">
+            <h3>
+                List of Doctors
+                <small>
+                    You can quickly manage doctors details.
+                </small>
+            </h3>                       
+        </div>
+
+        <div style="margin-left: 50px; margin-bottom: 20px;">
+            <a href="/addDoctor" class="btn vertical-button remove-border bg-yellow" title="">
+                <span class="glyph-icon icon-separator-vertical pad0A medium">
+                    <i class="glyph-icon icon-plus-sign-alt opacity-80 font-size-20"></i>
+                </span>
+                <span class="button-content">Add New</span>
+            </a>       
+        </div>
+    
+        <div id="page-content">
+            
+            <div class="example-box">
+                <div class="example-code">
+
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Last Name</th>
+                                <th>Email Address</th>
+                                <th>Phone Number</th>
+                                <th>Department</th>
+                                <!-- <th>Status</th> -->
+                                <th>Set Schedule Time</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <% if(doctor.length>0){
+                                var i=0
+
+                                for(doc of doctor){
+                                    i++ 
+                                    %>
+                            <tr>
+                                <td><%= i%></td>
+                                <td class="font-bold text-left"><%= doc.name %></td>
+                                <td class="font-bold text-left"><%= doc.lname %></td>
+                                <td class="font-bold text-left"><%= doc.email %></td>
+                                <td class="font-bold text-left"><%= doc.phone %></td>
+                               <td class="font-bold text-left">
+                                    <% for(d of department){
+                                        if( d.id == doc.department){
+                                            %>
+                                            <%= d.dp %>
+                                            <%
+                                        }
+                                    }%>
+                                </td>
+
+                                <!-- <td><div class="label bg-orange"><%= doc.status%></div></td> -->
+                                <td>
+                                    <div >
+                                        <a href="/addTime/<%= doc._id%>" class="btn vertical-button remove-border bg-yellow" title="">
+                                            
+                                            <span class="button-content glyph-icon icon-plus-sign-alt" ">Set Schedule Time</span>
+                                        </a>       
+                                    </div>
+                                </td>
+                                <td>
+                                    
+                                    <a href="/edit/<%= doc._id%>" class="btn small bg-blue-alt tooltip-button" data-placement="top" title="" data-original-title="Edit">
+                                        <i class="glyph-icon icon-edit"></i>
+                                    </a>
+                                    <form class="btn small bg-red tooltip-button" action="/delet" method="POST" data-placement="top" title="" data-original-title="Remove">
+                                        <button type="submit" class="glyph-icon icon-remove" style="background-color: rgb(223, 99, 99); border: none; color: white;"></button>
+                                        <input type="hidden" value="<%= doc._id%>" name="docId">
+                                    </form>
+                                </td>
+                            </tr>
+                            <%}}%>
+                        </tbody>
+                    </table>
+
+                </div>
+                
+            </div>
+
+<%- include('../include/end.ejs')%>

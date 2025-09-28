@@ -1,0 +1,58 @@
+<%- include('../include/head.ejs')%>
+    </head>
+<body style="overflow: hidden;">
+    <%- include('../include/header.ejs')%>            
+    <%- include('../include/sideBar.ejs')%>
+<div id="page-content-wrapper">
+    <div id="page-title">
+        <h3>
+            Set Shcedule Time
+            <small>
+                You can set time for doctors.
+            </small>
+        </h3>                       
+    </div>
+    <div id="page-content">
+        
+        <div class="example-box">
+            <div class="example-code clearfix">
+        
+                <form action="/addTime" enctype="multipart/form-data" class="col-md-12" method="POST">
+                    
+                    <div class="form-col col-md-12" style="margin-left: 20%;">
+                        <div class="form-label col-md-1">
+                            <label for="">
+                                Date :
+                            </label>
+                        </div>
+                        <div class="form-input col-md-4">
+                            <input placeholder="Enter Valid Date" type="date" name="date" multiple required id="">
+                            
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-col col-md-12" style="margin-left: 40%;">
+                        <br><br>
+                    <!-- <div class="form-row">
+                        <div class="form-label col-md-2">
+                            <label for="">
+                                Time :
+                            </label>
+                        </div>
+                        <div class="form-input col-md-4">
+                            <input placeholder="Enter Valid Time" type="text" name="time" id="">
+                        </div>
+                    </div>  -->
+                    <input type="hidden" value="<%= doc._id%>" name="doctorId">
+                    <div class="form-label col-md-12 center-margin">
+                        <button type="submit" class="btn medium bg-green ">
+                            <span class="button-content">Set Time</span>
+                        </button>
+                    </div>
+                </div>
+                </form>
+        
+            </div>
+            
+        </div>
+<%- include('../include/end.ejs')%>

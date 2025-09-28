@@ -1,0 +1,87 @@
+<%- include('../include/head.ejs')%>
+</head>
+<body style="overflow: hidden;">
+    <%- include('../include/header.ejs')%>            
+    <%- include('../include/sideBar.ejs')%>
+    <div id="page-content-wrapper">
+        <div id="page-title">
+            <h3>
+                List of Doctors
+                <small>
+                    You can quickly manage doctors details.
+                </small>
+            </h3>                       
+        </div>
+        <div id="page-content">
+            
+            <div class="example-box">
+                <div class="example-code">
+
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Schedule Time</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% 
+                            if(schTime.length>0){
+                                var i=0
+                            for(d of schTime){
+                                
+                                const date = new Date(d.date)
+                                const day = date.getDate().toString().padStart(2, '0')
+                                const month = date.getMonth().toString().padStart(2,'0')   
+                                const year = date.getFullYear()  
+                                const hour = date.getHours().toString().padStart(2,'0') 
+                                let period = ''
+                                if(hour >= 12){
+                                    period = "PM"
+                                }
+                                else{
+                                    period = "AM"
+                                }
+
+                                for(doc of doctor){
+                                    if(doc.id == d.doctorId){
+                                    i++
+                                    %>
+                            <tr>
+                                <td><%= i%></td>
+                                <td class="font-bold text-left"><%= doc.name %></td>
+                               <td class="font-bold text-left">
+                                    <% for(d of department){
+                                        if( d.id == doc.department){
+                                            %>
+                                            <%= d.dp %>
+                                            <%
+                                        }
+                                    }%>
+                                </td>                                
+                               
+                                <td><div class="label bg-orange"><%= day%>/<%= month%>/<%= year%> Hour: <%= hour%> <%= period%></div></td>
+                                <td>
+                                    
+                                    <a href="/edit/<%= date._id%>" class="btn small bg-blue-alt tooltip-button" data-placement="top" title="" data-original-title="Edit">
+                                        <i class="glyph-icon icon-edit"></i>
+                                    </a>
+                                    <form class="btn small bg-red tooltip-button" action="/deletDate" method="POST" data-placement="top" title="" data-original-title="Remove">
+                                        <button type="submit" class="glyph-icon icon-remove" style="background-color: rgb(223, 99, 99); border: none; color: white;"></button>
+                                        <input type="hidden" value="<%= date._id%>" name="dateId">
+                                    </form>
+                                </td>
+                                <%}%>
+                            </tr>
+                            <%}}}%>
+                        </tbody>
+                    </table>
+
+                </div>
+                
+            </div>
+
+<%- include('../include/end.ejs')%>

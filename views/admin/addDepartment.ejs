@@ -1,0 +1,44 @@
+<%- include('../include/head.ejs')%>
+    </head>
+<body style="overflow: hidden;">
+    <%- include('../include/header.ejs')%>            
+    <%- include('../include/sideBar.ejs')%>
+<div id="page-content-wrapper">
+    <div id="page-title">
+        <h3>
+            Add New Department
+            <small>
+                You can add new Department.
+            </small>
+        </h3>                       
+    </div>
+    <div id="page-content">
+        
+        <div class="example-box">
+            <div class="example-code clearfix">
+        
+                <form action="/addPart" class="col-md-6 center-margin" method="POST">
+                    
+                    <div class="form-row">
+                        <div class="form-label col-md-3">
+                            <label for="">
+                                Department :
+                            </label>
+                        </div>
+                        <div class="form-input col-md-9">
+                            <input placeholder="Enter New Department" type="text" name="dp" id="">
+                        </div>
+                    </div>  
+                    
+                    <br>
+                    <div class="form-label col-md-1 center-margin">
+                        <button type="submit" class="btn medium bg-green ">
+                            <span class="button-content">Save</span>
+                        </button>
+                    </div>
+                </form>
+        
+            </div>
+            
+        </div>
+<%- include('../include/end.ejs')%>
