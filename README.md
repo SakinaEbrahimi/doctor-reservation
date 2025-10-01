@@ -15,6 +15,7 @@ The system includes an **Admin Panel** and a **User Panel** with complete manage
 - View doctor list and details  
 - Book an appointment with a doctor  
 - Leave comments and suggestions about doctors
+  
   ---
 
 ## 🛠️ Technologies Used
@@ -23,6 +24,7 @@ The system includes an **Admin Panel** and a **User Panel** with complete manage
 - **Other Tools:** Git & GitHub  
 
 ---
+
 📷 Screenshots
 
 ##Here are some screenshots of the system:
@@ -45,7 +47,7 @@ Admin view and delete users comment.
 Admin can view user Reservation and delete it.
 ![admin page](./images/admin-user-reserve.PNG)
 
-Main Page
+User Interface
 ![admin page](./images/user-page-main.PNG)
 Doctor Details Page – Shows doctor’s profile and schedule
 ![admin page](./images/user-page-doctor.PNG)
