@@ -14,14 +14,44 @@ The system includes an **Admin Panel** and a **User Panel** with complete manage
 ## 👩‍💻 User Features
 - View doctor list and details  
 - Book an appointment with a doctor  
-- Leave comments and suggestions about doctors  
-
----
+- Leave comments and suggestions about doctors
+  ---
 
 ## 🛠️ Technologies Used
 - **Backend:** Node.js, Express.js, MongoDB  
 - **Frontend:** HTML, CSS, Bootstrap, Vue.js, EJS  
 - **Other Tools:** Git & GitHub  
+
+---
+📷 Screenshots
+
+##Here are some screenshots of the system:
+
+Login Page – Admin login interface
+![admin page](./images/admin-page-login.PNG)
+
+Add Doctor Page – Admin can add a new doctor
+![admin page](./images/admin-page-add.PNG)
+
+Admin Dashboard – View all doctors with details also Add and Manage doctors, schedules, and reservations.
+![admin page](./images/admin-page-list.PNG)
+
+Admin can set and edit schedules time for doctors
+![admin page](./images/admin-page-sheduletime.PNG)
+
+Admin view and delete users comment.
+![admin page](./images/admin-page-comment.PNG)
+
+Admin can view user Reservation and delete it.
+![admin page](./images/admin-user-reserve.PNG)
+
+Main Page
+![admin page](./images/user-page-main.PNG)
+Doctor Details Page – Shows doctor’s profile and schedule
+![admin page](./images/user-page-doctor.PNG)
+Reservation Page – User can book a doctor’s appointment
+Feedback Page – Users can leave comments and suggestions
+![admin page](./images/user-page-reserve.PNG)
 
 ---
 
@@ -38,30 +68,3 @@ npm install
 
 # Run the application
 npm start
-
-📷 Screenshots
-
-Here are some screenshots of the system:
-
-    Login Page – Admin login interface
-    ![Login Page](/images/admin-page-login.PNG)
-![Admin Dashboard](./images/admin-dashboard.png)
-![Add Doctor Page](./images/add-doctor.png)
-![Reservation Page](./images/reservation.png)
-
-    Admin Dashboard – Add andManage doctors, schedules, and reservations
-
-    Add Doctor Page – Admin can add a new doctor
-
-    Doctor List Page – View all doctors with details
-
-    Reservation Page – User can book a doctor’s appointment
-
-    Doctor Details Page – Shows doctor’s profile and schedule
-
-    Feedback Page – Users can leave comments and suggestions
-
-(You can add your screenshots inside a screenshots folder and link them like this:)
-
-![Login Page](./screenshots/login.png)
-![Admin Dashboard](./screenshots/admin-dashboard.png)
